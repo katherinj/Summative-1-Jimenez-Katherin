@@ -67,8 +67,9 @@ public class WordController {
     @RequestMapping(value = "/word", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getWord() {
-        int id = (int) (Math.random() * 10);
-        String word = "Word of the Day:\n";
+        int id = (int) (Math.random() * 10) + 1;
+        System.out.println(id);
+        String word = "Word of the Day–\n";
         for (Definition w : wordList) {
             if(w.getID() == id){
                 return word + w.getWord() + ": " + w.getDefinition(); 
