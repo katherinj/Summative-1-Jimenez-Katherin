@@ -1,26 +1,13 @@
 package com.company.summative.models;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 public class Answer {
-    private String[] potentialAnswers = {
-            "Signs point to yes",
-            "My reply is no.",
-            "Concentrate and ask again",
-            "It is certain",
-            "Outlook not so good",
-            "My sources say no"
-    };
     private int id;
     private String question;
     private String answer;
     private List<String> answers;
-
-    public Answer(String q, int id){
-        this.question = q;
-        this.id = id;
-        answer = potentialAnswers[(int)(Math.random() * ((potentialAnswers.length-1) + 1))];
-    }
 
     public int getId(){
         return id;
@@ -39,7 +26,7 @@ public class Answer {
     public String getAnswer(){
         return answer;
     }
-    public void setAnswer(){
-        answer = potentialAnswers[(int)(Math.random() * ((potentialAnswers.length-1) + 1))];
+    public void setAnswer(String answer){
+        this.answer = answer;
     }
 }
