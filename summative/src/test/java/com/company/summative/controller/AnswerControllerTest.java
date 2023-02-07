@@ -2,7 +2,6 @@ package com.company.summative.controller;
 
 import com.company.summative.models.Answer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,22 +30,15 @@ public class AnswerControllerTest {
     // A list of answers for testing purposes
     private List<Answer> answerList;
 
-    @Before
-    public void setUp() {
-        // Standard set up method, for instantiating test objects
-        // Don't have to do anything special for mockMvc since it's Autowired
-    }
-
     // Testing POST /magic
     @Test
     public void shouldReturnNewAnswerOnPostRequest() throws Exception {
-        // ARRANGE
-        Answer inputAnswer = new Answer("Will I pass my exam tomorrow?", 3);
+        Answer inputAnswer = new Answer();
+        inputAnswer.setQuestion("Will I pass my exam tomorrow?");
+        inputAnswer.setId(3);
 
-        // Convert Java Object to JSON
         String inputJson = mapper.writeValueAsString(inputAnswer);
 
-        // ACT
         mockMvc.perform(
                         post("/magic")                            // Perform the POST request
                                 .content(inputJson)                       // Set the request body
