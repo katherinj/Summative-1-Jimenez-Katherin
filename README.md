@@ -3,8 +3,7 @@
 Submitted by: **Katherin Jimenez**
 
 ## Description:
-For this project, I worked with 2 teammates, Ashley and Bridget. We worked together to build a REST API. 
-This API will provide a quote of the day, a word of the day, and Magic 8 Ball services.
+For this project, I worked with 2 teammates, Ashley and Bridget to build a REST API that provides a quote of the day, a word of the day, and Magic 8 Ball services.
 
 ## Video Demonstration: 
 [![Video Demonstration of Summative Project 1](https://www.youtube.com/watch?v=W7AFpuR7Dnk&t=3s&ab_channel=katherinkay.jpg)](https://www.youtube.com/watch?v=W7AFpuR7Dnk&t=3s&ab_channel=katherinkay "Summative Project Demo")
