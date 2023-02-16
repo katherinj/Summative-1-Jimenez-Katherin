@@ -2,14 +2,14 @@
 
 Submitted by: **Katherin Jimenez**
 
-## Description
+## Description:
 For this project, I worked with 2 teammates, Ashley and Bridget. We worked together to build a REST API. 
 This API will provide a quote of the day, a word of the day, and Magic 8 Ball services.
 
 ## Video Demonstration: 
-[![Video Demonstration of Summative Project 1](https://www.youtube.com/watch?v=W7AFpuR7Dnk&t=3s&ab_channel=katherinkay)
+[![Video Demonstration of Summative Project 1](https://www.youtube.com/watch?v=W7AFpuR7Dnk&t=3s&ab_channel=katherinkay.jpg)](https://www.youtube.com/watch?v=W7AFpuR7Dnk&t=3s&ab_channel=katherinkay "Summative Project Demo")
 
-## Required Functionality
+## Required Functionality:
 * [X] Your project must be created in an IntelliJ project called Summative-1-Lastname-Firstname.
 * [X] Your project must be built using Spring Boot and Spring MVC.
 * [X] Initialize the project using start.spring.io.
