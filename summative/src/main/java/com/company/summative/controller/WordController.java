@@ -14,11 +14,9 @@ import com.company.summative.models.Definition;
 
 @RestController
 public class WordController {
-    
     private List<Definition> wordList;
 
     public WordController() {
-
         Definition word1 = new Definition(1);
         Definition word2 = new Definition(2);
         Definition word3 = new Definition(3);
@@ -63,19 +61,11 @@ public class WordController {
         wordList = Arrays.asList(word1, word2, word3, word4, word5, word6, word7, word8, word9, word10);
     }
 
-
     @RequestMapping(value = "/word", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public String getWord() {
+    public Definition getWord() {
         int id = (int) (Math.random() * 10) + 1;
-        System.out.println(id);
-        String word = "Word of the Day–\n";
-        for (Definition w : wordList) {
-            if(w.getID() == id){
-                return word + w.getWord() + ": " + w.getDefinition(); 
-            }
-        }
-        return null;
+        return wordList.get(id);
     }
 }
 

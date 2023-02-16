@@ -13,7 +13,6 @@ public class Definition {
     public void setID(int id) {
         this.id = id;
     }
-    
     public int getID() {
         return this.id;
     }
@@ -21,7 +20,6 @@ public class Definition {
     public void setWord(String word) {
         this.word = word;
     }
-    
     public String getWord(){
         return this.word;
     }
@@ -29,9 +27,7 @@ public class Definition {
     public void setDefinition(String definition){
         this.definition = definition;
     }
-
     public String getDefinition(){
         return this.definition;
     }
-
 }

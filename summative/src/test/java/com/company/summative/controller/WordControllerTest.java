@@ -15,19 +15,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @WebMvcTest(WordController.class)
 public class WordControllerTest {
-    
     @Autowired
     private MockMvc mockMvc;
-
-    @Before
-    public void setUp() {
-        // Standard set up method, for instantiating test objects
-        // Don't have to do anything special for mockMvc since it's Autowired
-    }
-
     @Test
     public void shouldReturnAllWordsInList() throws Exception {
-
         // ACT
         mockMvc.perform(get("/word"))                // Perform the GET request
                 .andDo(print())                          // Print results to console

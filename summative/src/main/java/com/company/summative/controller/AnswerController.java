@@ -25,7 +25,7 @@ public class AnswerController {
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Answer addAnswer(@RequestBody String question) {
-        if(question == "")
+        if(question.equals(""))
             throw new IllegalArgumentException("You must provide a question in order to receive an answer.");
 
         Answer a = new Answer();

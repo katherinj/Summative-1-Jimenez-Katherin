@@ -1,5 +1,6 @@
 package com.company.summative.controller;
 
+import com.company.summative.models.Answer;
 import com.company.summative.models.Quote;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,8 @@ import java.util.Random;
 public class QuoteController {
     private List<Quote> quoteList;
 
-    // private static int idCounter = 1;
-
     public QuoteController(){
         quoteList = new ArrayList<>();
-        // Random rand = new Random();
 
         quoteList.add(new Quote("Albert Einstein", "Learn from yesterday, live for today and hope for tomorrow. The important thing is not to stop questioning", 1));
         quoteList.add(new Quote("Bridget Torres", "You are like lemons, so sour", 2));
@@ -31,20 +29,14 @@ public class QuoteController {
         quoteList.add(new Quote("Eleanor Roosevelt", "Do what you feel in your heart to be right―for you’ll be criticized anyway.", 8));
         quoteList.add(new Quote("S. O’Sade", "Oh! It’s Friday again. Share the love that was missing during the week. In a worthy moment of peace and bliss", 9));
         quoteList.add(new Quote("Napoleon Hill", "If you cannot do great things, do small things in a great way.", 10));
-
-
     }
-
-
 
     @RequestMapping(value = "/quote", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public String getQuoteList(){
-
+    public Quote getQuote(){
         Random rand = new Random();
         int randomIndex = rand.nextInt(quoteList.size());
         Quote randomQuote = quoteList.get(randomIndex);
-        return randomQuote.getAuthor() + ": " + randomQuote.getQuote();
-        // return quoteList;
+        return randomQuote;
     }
 }

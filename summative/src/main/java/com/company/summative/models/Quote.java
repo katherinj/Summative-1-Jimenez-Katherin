@@ -1,13 +1,9 @@
 package com.company.summative.models;
 
 public class Quote {
-
     private String author;
-
     private String quote;
-
     private int id;
-
 
     public Quote(String author, String quote, int id){
         this.author = author;
@@ -18,7 +14,6 @@ public class Quote {
     public String getAuthor() {
         return author;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -26,7 +21,6 @@ public class Quote {
     public String getQuote() {
         return quote;
     }
-
     public void setQuote(String quote) {
         this.quote = quote;
     }
@@ -34,7 +28,6 @@ public class Quote {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }

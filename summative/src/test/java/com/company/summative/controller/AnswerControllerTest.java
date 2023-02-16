@@ -24,28 +24,27 @@ public class AnswerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    // ObjectMapper used to convert Java objects to JSON and vice versa
-    private ObjectMapper mapper = new ObjectMapper();
-
-    // A list of answers for testing purposes
-    private List<Answer> answerList;
-
     // Testing POST /magic
     @Test
     public void shouldReturnNewAnswerOnPostRequest() throws Exception {
-        Answer inputAnswer = new Answer();
-        inputAnswer.setQuestion("Will I pass my exam tomorrow?");
-        inputAnswer.setId(3);
-
-        String inputJson = mapper.writeValueAsString(inputAnswer);
-
         mockMvc.perform(
                         post("/magic")                            // Perform the POST request
-                                .content(inputJson)                       // Set the request body
+                                .content("Will I pass my exam tomorrow?")                       // Set the request body
                                 .contentType(MediaType.APPLICATION_JSON)  // Tell the server it's in JSON format
                 )
                 .andDo(print())                                // Print results to console
                 .andExpect(status().isCreated());              // ASSERT (status code is 201)
     }
 
+    // Testing POST /magic with empty question (bad request!)
+    @Test
+    public void shouldReturnErrorWithEmptyQuestion() throws Exception {
+        mockMvc.perform(
+                        post("/magic")                            // Perform the POST request
+                                .content("")                       // Set the request body
+                                .contentType(MediaType.APPLICATION_JSON)  // Tell the server it's in JSON format
+                )
+                .andDo(print())                                // Print results to console
+                .andExpect(status().is4xxClientError());              // ASSERT (status code is 4xx)
+    }
 }
